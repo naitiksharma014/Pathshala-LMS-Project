@@ -28,7 +28,7 @@ import MyEnrolledCourses from './pages/MyEnrolledCourses.jsx';
 import getAllReviews from './customHook/getAllReviews.js';
 import SearchWithAi from './pages/SearchWithAi.jsx';
 
-export const serverUrl = "http://localhost:8000"
+export const serverUrl = "https://pathshala-lms-project.onrender.com/"
 
 function App() {
     getCurrentUser();
