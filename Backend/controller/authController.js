@@ -171,7 +171,7 @@ export const resetPassword = async (req, res) => {
 export const googleAuth = async (req, res) => {
     try {
         const {name, email, role} = req.body;
-        const user = await User.findOne({email});
+        let user = await User.findOne({email});
 
         if (!user) {
             user = await User.create({
@@ -181,7 +181,7 @@ export const googleAuth = async (req, res) => {
             });
         }
 
-        let token = await genToken(user._id);
+        const token = await genToken(user._id);
         res.cookie("token", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
